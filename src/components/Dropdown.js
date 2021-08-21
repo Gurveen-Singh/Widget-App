@@ -19,15 +19,15 @@ const Dropdown = ({ label, options, selected, onSelectedChange }) => {
     };
   }, []);
 
-  const renderedOptions = options.map((Option) => {
+  const renderedOptions = options.map((Option, index) => {
     if (Option.label === selected.label) {
       return null;
     }
 
     return (
       <div
+        key={index}
         className="item"
-        key={Option.Color}
         onClick={() => onSelectedChange(Option)}
       >
         {Option.label}
